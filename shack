@@ -58,10 +58,15 @@ Main {
         `git rm -r features`
         `git rm Gemfile`
         `git mv README.textile README.shack.textile`
+        # subtree merge, for more info refer to http://progit.org/book/ch6-7.html
+        
+        `git fetch shack`
+        `git checkout -b shack_core shack/shack_core`
+        
         `git commit -a -m"SHack has been properly initialized"`
         puts "SHack has been properly initilized... Now you can start Slide Hacking!"
       elsif params[:update].given?
-        puts "unimplemented"
+        
       end 
     end
     
